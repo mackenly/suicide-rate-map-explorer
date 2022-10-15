@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import './App.css';
 import Plot from 'react-plotly.js';
 import cdcData from './data.json'
@@ -41,7 +39,7 @@ function App() {
 							},
 						]}
 						layout={{
-							title: '<b>Suicide Data Map Test</b><br>This map illustrates the number of people who died by suicide across the counties of the United State.<br><a href="https://wonder.cdc.gov/ucd-icd10.html" target="_blank" rel="noreferrer">Data Source: CDC WONDER</a>',
+							title: '<b>Suicide Data Map Test</b><br>This map illustrates the number of people who died by suicide across the counties of the United States.<br><a href="https://wonder.cdc.gov/ucd-icd10.html" target="_blank" rel="noreferrer">Data Source: CDC WONDER</a>',
 							mapbox: { center: { lon: -98, lat: 38 }, zoom: 2, style: 'open-street-map' },
 							width: window.innerWidth * 0.95,
 							height: window.innerHeight * 0.95,
