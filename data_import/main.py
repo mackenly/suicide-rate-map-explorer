@@ -28,13 +28,22 @@ with open("data.txt", "r") as f:
         line[0] = line[0].replace('"', "")
         line[1] = line[1].replace('"', "")
         # convert the third and fourth element to int
-        line[2] = int(line[2])
-        line[3] = int(line[3])
+        if line[2] == "Suppressed" or line[2] == "Missing":
+            line[2] = 0
+        else:
+            line[2] = int(line[2])
+        if line[3] == "Suppressed" or line[3] == "Missing":
+            line[3] = 0
+        else:
+            line[3] = int(line[3])
         # convert the fifth element to float, if it's unreliable set it to -1
-        if line[4] == "Unreliable":
+        if line[4] == "Unreliable" or line[4] == "Suppressed" or line[4] == "Missing":
             line[4] = -1
         else:
             line[4] = float(line[4])
+        # if the code doesn't begin in 50 for Vermony skip it
+        if not line[1].startswith("50"):
+            continue
         # add the list to the dictionary
         item = {line[1]: {
             "name": line[0],

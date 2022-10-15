@@ -14,7 +14,7 @@ function App() {
 								type: 'choroplethmapbox',
 								locations: Object.keys(cdcData.counties),
 								z: Object.values(cdcData.counties).map((value) => {
-									return value.crude_rate;
+									return (value.deaths / value.population)*100000;
 								}),
 								geojson: geoData,
 								marker: {
@@ -39,7 +39,7 @@ function App() {
 							},
 						]}
 						layout={{
-							title: '<b>Suicide Data Map Test</b><br>This map illustrates the number of people who died by suicide across the counties of the United States.<br><a href="https://wonder.cdc.gov/ucd-icd10.html" target="_blank" rel="noreferrer">Data Source: CDC WONDER</a>',
+							title: '<b>2020 Suicide Data Map Test</b><br>This map illustrates the number of people who died by suicide across the counties of the United States.<br><a href="https://wonder.cdc.gov/ucd-icd10.html" target="_blank" rel="noreferrer">Data Source: CDC WONDER</a>',
 							mapbox: { center: { lon: -98, lat: 38 }, zoom: 2, style: 'open-street-map' },
 							width: window.innerWidth * 0.95,
 							height: window.innerHeight * 0.95,
