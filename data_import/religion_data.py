@@ -3,35 +3,31 @@ class Religion:
         self.__str__()
 
     def __str__(self):
-        with open("religion_data.txt", "r") as f:
-            # create list from f split by newlines
-            data = f.read().split("\\n")
+        with open("religion_data.csv", "r") as f:
+            # parse the csv file
+            data = f.read().split("\n")
             # remove the first line
             data.pop(0)
+            # remove last line
+            data.pop(-1)
             # create a dictionary
             religion = {}
-            # loop over the list
+            # loop over the data
             for line in data:
-                for char in line:
-                    # remove ", ', and \n
-                    if char == '"':
-                        line = line.replace(char, "")
-                    if char == "'":
-                        line = line.replace(char, "")
-                    if char == "\n":
-                        line = line.replace(char, "")
                 # split the line into a list
-                line = line.split(";")
-                # add line data to the dictionary
-                item = {line[0]: {
-                    "religiousData": {
-                        "non-attendance-rate": float(line[1]),
-                        "trinitarian-christian-attendance": float(line[3]),
-                        "non-trinitarian-christian-attendance": float(line[4]),
-                        "other-religious-attendance": float(line[5]),
-                    }
+                line = line.split(",")
+                if len(line[:7]) > 1:
+                    fips = str(line[-7])
+                else:
+                    continue
+                if len(line[2]) > 1:
+                    percent = float(line[2]) / 1000
+                else:
+                    percent = 0.0
+                religion.update({fips: {"religionData": {"percent": percent}}})
+                # add the list to the dictionary
+                item = {fips: {
+                    "religionData": {"attendanceRate": percent}
                 }}
                 religion.update(item)
-
-        # return the dictionary as a string
-        return str(religion).replace("'", '"').replace("\\n", "")
+            return str(religion).replace("'", '"')

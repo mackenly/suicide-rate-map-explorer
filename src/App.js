@@ -46,11 +46,7 @@ function App() {
 												: roundTo4((value.suicideData.deaths / value.suicideData.population) * 100)
 										}%</span><br>
 										Number of Suicide Deaths: <span style="color:red;">${value.suicideData.deaths === 0 ? 'less than 10' : value.suicideData.deaths}</span><br>
-										No Religious Attendance: <span style="color:red;">${roundTo4(
-											100 -
-												(value.religiousData['trinitarian-christian-attendance'] +
-													value.religiousData['non-trinitarian-christian-attendance'])
-										)}%</span></b><extra></extra>`;
+										No Religious Attendance: <span style="color:red;">${roundTo4(100 - value.religionData.attendanceRate * 100)}%</span></b><extra></extra>`;
 								}),
 								colorbar: {
 									title: {
@@ -61,7 +57,7 @@ function App() {
 							},
 						]}
 						layout={{
-							title: '<b>2020 Suicide Data Map Test</b><br>This map illustrates the number of people who died by suicide across the counties of the United States.<br><a href="https://wonder.cdc.gov/ucd-icd10.html" target="_blank" rel="noreferrer">Health Data Source: CDC WONDER</a>, <a href="http://usreligioncensus.org/" target="_blank" rel="noreferrer">Religion Data Source: US Religion Census</a>',
+							title: '<b>2020 Suicide Data Map Test</b><br>This map illustrates the number of people who died by suicide across the counties of the United States.<br><a href="https://wonder.cdc.gov/ucd-icd10.html" target="_blank" rel="noreferrer">Health Data Source: CDC WONDER</a>, <a href="http://usreligioncensus.org/" target="_blank" rel="noreferrer">Religion Data Source: ASARB 2010 U.S. Religion Census: Religious Congregations & Membership Study</a>',
 							mapbox: { center: { lon: -98, lat: 38 }, zoom: 2, style: 'open-street-map' },
 							width: window.innerWidth * 0.95,
 							height: window.innerHeight * 0.95,
