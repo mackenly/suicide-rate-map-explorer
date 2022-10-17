@@ -58,7 +58,8 @@ function App() {
 						]}
 						layout={{
 							title: '<b>2020 Suicide Data Map Test</b><br>This map illustrates the number of people who died by suicide across the counties of the United States.<br><a href="https://wonder.cdc.gov/ucd-icd10.html" target="_blank" rel="noreferrer">Health Data Source: CDC WONDER</a>, <a href="http://usreligioncensus.org/" target="_blank" rel="noreferrer">Religion Data Source: ASARB 2010 U.S. Religion Census: Religious Congregations & Membership Study</a>',
-							mapbox: { center: { lon: -98, lat: 38 }, zoom: 2, style: 'open-street-map' },
+							mapbox: { center: { lon: -73, lat: 44 }, zoom: 5, style: 'open-street-map' },
+							// carto-darkmatter, carto-positron, open-street-map, stamen-terrain, stamen-toner, stamen-watercolor, white-bg
 							width: window.innerWidth * 0.95,
 							height: window.innerHeight * 0.95,
 						}}
