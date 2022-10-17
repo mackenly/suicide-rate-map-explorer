@@ -46,7 +46,7 @@ function App() {
 												: roundTo4((value.suicideData.deaths / value.suicideData.population) * 100)
 										}%</span><br>
 										Number of Suicide Deaths: <span style="color:red;">${value.suicideData.deaths === 0 ? 'less than 10' : value.suicideData.deaths}</span><br>
-										Non-Christian Percent: <span style="color:red;">${roundTo4(
+										No Religious Attendance: <span style="color:red;">${roundTo4(
 											100 -
 												(value.religiousData['trinitarian-christian-attendance'] +
 													value.religiousData['non-trinitarian-christian-attendance'])
