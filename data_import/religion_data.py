@@ -17,7 +17,10 @@ class Religion:
                 # split the line into a list
                 line = line.split(",")
                 if len(line[:7]) > 1:
-                    fips = str(line[-7])
+                    if int(line[-7]) < 10000:
+                        fips = "0" + line[-7]
+                    else:
+                        fips = str(line[-7])
                 else:
                     continue
                 if len(line[2]) > 1:
