@@ -1,10 +1,16 @@
 header {
-	background-color: #222;
 	width: fit-content;
 	margin: 0 auto;
 	padding: 20px min(5rem, 15vw);
-	border-radius: 0 0 25px 25px;
-	color: white;
+    background-color: #fff;
+	border: 2px solid #fff;
+	border-radius: 0 0 8px 8px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+	text-align: center;
+	font-size: 14px;
+	outline: none;
+	text-decoration: none;
+	transition: all 0.8s;
 }
 
 header h1 {
@@ -13,12 +19,11 @@ header h1 {
 }
 
 header p {
-	font-size: .9em;
+	font-size: 0.9em;
 	margin: 0;
 }
 
 header a {
-    color: white;
 }
 
 #map {
@@ -64,18 +69,15 @@ header a {
 	width: min(700px, 70vw);
 	height: min(500px, 80vh);
 	padding: 1rem 2.5rem;
-	background-color: rgba(0, 0, 0, 0.9);
+	background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 	border-radius: 25px;
 	text-align: left;
-	color: white;
 }
 
 #sources h3 {
 	font-size: 1.6rem;
-}
-
-#sources a {
-	color: white;
 }
 
 #sources button {
@@ -86,12 +88,94 @@ header a {
 	cursor: pointer;
 	background-color: transparent;
 	border: none;
-	color: white;
 	font-size: 1.8rem;
 }
 
+#legend {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	height: 35vh;
+	z-index: 1;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+	background-color: #fff;
+	border: 2px solid #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+	margin-bottom: 12px;
+	text-align: center;
+	font-size: 0.8rem;
+	outline: none;
+	padding: 10px 15px;
+	text-decoration: none;
+	transition: all 0.8s;
+}
+
+#legend:hover,
+#legend:active {
+	background-color: #ebebeb;
+	border-color: #ebebeb;
+}
+
+#legend hr {
+	grid-column: 1;
+	grid-row: 1/6;
+
+	border: 1px solid rgb(216, 216, 216);
+	margin: 2px;
+	padding: 10px;
+	border-radius: 3px;
+	background: linear-gradient(to bottom, #a00a0a, #ff9650, #dfdfdf);
+}
+
+#legend span {
+	grid-column: 2;
+	align-self: center;
+}
+
+#legend p {
+	grid-column: 3;
+	grid-row: 1/6;
+	align-self: center;
+	writing-mode: tb-rl;
+	transform: rotate(180deg);
+	padding: 0;
+	margin: 0;
+	margin-left: 5px;
+}
+
 @media screen and (max-width: 700px) {
+    header {
+        padding: 15px;
+    }
+
+    header p {
+        padding: 3px 0;
+    }
+
 	#sources {
 		overflow-y: scroll;
 	}
+
+	#legend {
+		grid-template-columns: 1fr .5fr;
+		height: 40vh;
+		padding: 0.3rem;
+	}
+
+	#legend span {
+        height: min-content;
+	}
+
+	#legend p {
+		display: none;
+	}
+
+    #legend hr {
+        padding: 8px;
+    }
 }
