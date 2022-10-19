@@ -52,11 +52,11 @@ header a {
 	outline: none;
 	padding: 10px 15px;
 	text-decoration: none;
-	transition: all 0.8s;
 }
 
 #sourceButton:hover,
-#sourceButton:active {
+#sourceButton:focus {
+	outline: 2px solid #000;
 	background-color: #ebebeb;
 	border-color: #ebebeb;
 }
@@ -90,6 +90,12 @@ header a {
 	background-color: transparent;
 	border: none;
 	font-size: 1.8rem;
+	transition: all 0.8s;
+}
+
+#source button:hover, #source button:active {
+	background-color: #ebebeb;
+	border-color: #ebebeb;
 }
 
 #legend {
