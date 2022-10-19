@@ -66,6 +66,7 @@ header a {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	overflow-y: scroll;
 	width: min(700px, 70vw);
 	height: min(500px, 80vh);
 	padding: 1rem 2.5rem;
@@ -148,6 +149,38 @@ header a {
 	margin-left: 5px;
 }
 
+#banner {
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    margin: 0;
+    padding: 5px 10px;
+    z-index: 1;
+    background-color: yellow;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    color: #000;
+}
+
+#banner p {
+    margin: 0;
+    padding: 0 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+#banner button {
+	top: 2rem;
+	right: 2rem;
+	padding: 0 1.5rem;
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	font-size: 1.4rem;
+}
+
 @media screen and (max-width: 700px) {
     header {
         padding: 15px;
@@ -156,10 +189,6 @@ header a {
     header p {
         padding: 3px 0;
     }
-
-	#sources {
-		overflow-y: scroll;
-	}
 
 	#legend {
 		grid-template-columns: 1fr .5fr;
@@ -177,5 +206,9 @@ header a {
 
     #legend hr {
         padding: 8px;
+    }
+
+    #banner {
+        padding: 5px 0px;
     }
 }

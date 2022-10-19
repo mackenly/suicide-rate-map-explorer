@@ -12,6 +12,7 @@ function Main() {
 	const w = queryParameters.get('w') || -100;
 	const zoom = queryParameters.get('zoom') || 3;
 	const [showSources, setShowSources] = useState(false);
+    const [showBanner, setShowBanner] = useState(true);
 	const [selectedFips, setSelectedFips] = useState([]);
 	const [mapBoxData, setMapBoxData] = useState(() => {
 		if (n & w & zoom) {
@@ -63,14 +64,39 @@ function Main() {
 
 	return (
 		<div className="App">
+			{showBanner && (
+				<div id="banner">
+					<p>
+						Are you thinking about killing yourself? Talk to someone in the U.S. by calling or texting{' '}
+						<i>
+							<a href="tel:988" target="_blank" rel="noreferrer">
+								988
+							</a>
+						</i>{' '}
+						or{' '}
+						<a href="http://www.suicide.org/hotlines/international-suicide-hotlines.html" target="_blank" rel="noreferrer">
+							talk to someone in your country
+						</a>
+						.
+					</p>
+					<button
+						onClick={() => {
+							setShowBanner(!showBanner);
+						}}
+					>
+						X
+					</button>
+				</div>
+			)}
 			<header className="App-header">
-				<h1>2020 Suicide Data Map Test</h1>
-				<p>This map illustrates the number of people who died by suicide across the counties of the United States.</p>
+				<h1>2020 Suicide Rate Map Explorer</h1>
 				<p>
+					This map illustrates the number of people who died by suicide across the counties of the United States with county
+					religious attendance data. <br />
+					<b>Click a county to isolate that state's data.</b>{' '}
 					<a href="/" value="0">
 						View All States
-					</a>{' '}
-					Click in a state to see that state's data isolated.
+					</a>
 				</p>
 			</header>
 			<div id="map">
@@ -179,6 +205,15 @@ function Main() {
 						<a href="https://www.thearda.com/data-archive?fid=RCMSCY10" target="_blank" rel="noreferrer">
 							https://www.thearda.com/data-archive?fid=RCMSCY10
 						</a>
+					</p>
+                    <h3>Notice</h3>
+					<p>
+						The data used in this project is from the CDC and the ARDA. The CDC doesn't publish death counts for causes of death
+						with fewer than 10 occurrences. That means that the death rate could be higher than shown in counties with low
+						populations. The hover cards display a less than x for the death rate which means the actual rate could be that or
+						lower. The data is not perfect and may not be accurate. This data and website should be used for educational
+						purposes only and is subject to the{' '}
+						<a href="https://github.com/mackenly/suicide-rate-map-explorer/blob/main/LICENSE" target="_blank" rel="noreferrer">project's license</a>.
 					</p>
 				</div>
 			)}
