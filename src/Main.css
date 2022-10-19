@@ -23,9 +23,6 @@ header p {
 	margin: 0;
 }
 
-header a {
-}
-
 #map {
 	position: fixed;
 	top: 0;
@@ -54,17 +51,20 @@ header a {
 	text-decoration: none;
 }
 
-#sourceButton:hover,
-#sourceButton:focus {
-	outline: 2px solid #000;
+#sourceButton:hover {
 	background-color: #ebebeb;
 	border-color: #ebebeb;
+}
+
+#sourceButton:focus {
+	outline: 2px solid #000;
 }
 
 #sources {
 	position: fixed;
 	top: 50%;
 	left: 50%;
+	z-index: 10;
 	transform: translate(-50%, -50%);
 	overflow-y: scroll;
 	width: min(700px, 70vw);
