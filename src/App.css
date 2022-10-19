@@ -1,3 +1,8 @@
 .App {
-  text-align: center;
+	text-align: center;
+}
+
+::selection {
+	background-color: #f9ff55;
+	color: #000;
 }

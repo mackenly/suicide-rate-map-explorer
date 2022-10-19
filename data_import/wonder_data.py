@@ -45,8 +45,8 @@ class Wonder:
                 else:
                     line[4] = float(line[4])
                 # if the code doesn't begin in 50 for Vermony skip it
-                if not line[1].startswith("50"):
-                    continue
+                #if not line[1].startswith("01"):
+                #    continue
                 # add the list to the dictionary
                 item = {line[1]: {
                     "location": {
