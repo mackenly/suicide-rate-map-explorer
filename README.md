@@ -5,6 +5,8 @@
 # Suicide Rate Map Explorer
 This project is a map illustrating the suicide rate of U.S. counties alongside religious attendance rates. [Some research suggests](https://www.hsph.harvard.edu/news/press-releases/regularly-attending-religious-services-associated-with-lower-risk-of-deaths-of-despair/) there is a corelation, this map was built to help identify areas with the greatest need.
 
+[Watch demo on YouTube...](https://www.youtube-nocookie.com/embed/ujAhDcC2LQI)
+
 <img src='./docs/whole-screenshot.jpg' alt='Screenshot of project'>
 
 ## Explore the Data
