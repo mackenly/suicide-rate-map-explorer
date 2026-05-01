@@ -7,7 +7,7 @@
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
     "plotly.js": "^3.4.0",
-    "react": "^19.1.1",
+    "react": "^19.2.5",
     "react-dom": "^19.2.4",
     "react-plotly.js": "^2.6.0",
     "react-router-dom": "^7.13.1",
